@@ -1,0 +1,992 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "微软雅黑", sans-serif;
+}
+
+/* 页面主体：演示滚动和覆盖效果，可根据自己的页面修改 */
+body {
+    padding: 0;
+    min-height: 200vh;
+    /* 让页面能滚动，测试导航覆盖 */
+    transition: overflow 0.3s;
+    /* 滚动条过渡，更流畅 */
+}
+
+/* 导航显示时，禁止页面滚动 */
+body.no-scroll {
+    overflow: hidden;
+}
+
+/* 汉堡触发按钮：固定右上角，始终可点击 */
+.menu-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg,  #5D4037, #8B4513);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    z-index: 1002;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 12px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+}
+
+/* 汉堡按钮三条线 - 横着的三条杠 */
+.menu-btn::before,
+.menu-btn::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+.menu-btn::before {
+    top: 18px;
+    transform: translateY(-4px);
+}
+
+.menu-btn::after {
+    bottom: 18px;
+    transform: translateY(4px);
+}
+
+.menu-btn span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: white;
+    border-radius: 1px;
+    transition: all 0.3s ease;
+}
+
+/* 图片容器 - 预留图片更换空间 */
+.menu-btn .icon-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 28px;
+    height: 28px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+}
+
+/* 激活状态：三条线变成X号 */
+.menu-btn.active::before {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-btn.active::after {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.menu-btn.active span {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+/* 悬停效果 */
+.menu-btn:hover {
+    background: linear-gradient(135deg, #8B4513, #5D4037);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.menu-btn:hover::before,
+.menu-btn:hover::after,
+.menu-btn:hover span {
+    background: #ffffff;
+}
+
+/* 图片模式样式 */
+.menu-btn.image-mode::before,
+.menu-btn.image-mode::after,
+.menu-btn.image-mode span {
+    opacity: 0;
+}
+
+.menu-btn.image-mode .icon-image {
+    opacity: 1;
+}
+
+/* 全屏导航容器：淡入效果核心样式 */
+.fullscreen-nav {
+    position: fixed;
+    /* 固定定位，脱离文档流 */
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /* 四边为0，实现全屏覆盖 */
+    background: #5D4037;
+    /* 导航背景色，可随意修改 */
+    z-index: 1000;
+    /* 确保盖住所有页面内容 */
+    opacity: 0;
+    /* 初始完全透明，隐藏导航 */
+    pointer-events: none;
+    /* 透明时禁止点击，防止误触 */
+    transition: opacity 0.3s ease;
+    /* 0.3秒淡入过渡，可改速度 */
+    /* 导航链接垂直+水平居中，可改布局 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    /* 导航链接之间的间距 */
+    max-height: 100vh; /* 限制最大高度为视口高度 */
+    overflow-y: auto; /* 添加垂直滚动条 */
+    padding: 40px 20px; /* 添加内边距，防止内容紧贴边缘 */
+}
+
+/* 导航激活类：淡入显示 */
+.fullscreen-nav.active {
+    opacity: 1;
+    /* 完全不透明，显示导航 */
+    pointer-events: auto;
+    /* 恢复点击功能 */
+}
+
+/* 导航内关闭按钮 */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    font-size: 30px;
+    background: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1001; /* 确保关闭按钮在最上层 *//*实际情况采用*/
+}
+
+/* 导航链接样式 */
+.fullscreen-nav a {
+    color: #fff;
+    font-size: 24px;
+    /* 链接字体大小 */
+    text-decoration: none;
+    transition: color 0.2s ease;
+    /* hover变色过渡 */
+}
+
+/* 链接鼠标悬浮效果 */
+.fullscreen-nav a:hover {
+    color: #D4AF37;
+    /* hover高亮色，可改 */
+}
+/*以上为导航栏主体区域。子页面不动保持原样。*/
+
+
+/***/
+/*以上为导航栏主体区域。子页面不动保持原样。*/
+/***/
+/* 全屏轮播容器 */
+.fullscreen-carousel {
+    position: relative;
+    width: 100%;
+    height: 75vh;
+    overflow: hidden;
+    margin-top: 0;
+    z-index: 1;
+}
+
+/* 轮播项 */
+.carousel-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 激活的轮播项 */
+.carousel-item.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+/* 预览图移动到底层的动画 *//*
+.carousel-item.preview-to-background {
+    animation: previewToBackground 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}*/
+/* 进入动画：淡入 */
+.carousel-item.fade-in {
+    opacity: 1;
+    z-index: 2;
+}
+
+/* 退出动画：淡出 */
+.carousel-item.fade-out {
+    opacity: 0;
+    z-index: 1;
+}
+
+/* 轮播内容包装器 */
+.carousel-content-wrapper {
+    width: 90%;
+    max-width: 1200px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0px;
+}
+
+/* 轮播内容区域 */
+.carousel-content {
+    text-align: left;
+    color: white;
+    padding: 30px;
+    /* 取消容器颜色 */
+    background: transparent;
+    border-radius: 0;
+    backdrop-filter: none;
+    max-width: 600px;
+    z-index: 3;
+    transition: transform 0.6s ease;
+}
+
+/* 轮播标题 - 中文 */
+.carousel-title-zh {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: "Microsoft YaHei", serif;
+}
+
+/* 轮播标题 - 英文 */
+.carousel-title-en {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 20px;
+    color: #f0f0f0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: "Arial", sans-serif;
+}
+
+/* 轮播描述 */
+.carousel-description {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #e0e0e0;
+    margin-bottom: 0;
+    font-family: "Microsoft YaHei", sans-serif;
+}
+
+/* 预览图容器 */
+.carousel-preview {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    z-index: 3;
+    border-radius: 8px;
+    overflow: visible;
+    transition: all 0.6s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* 预览图切换动画 - 向左移动 *//*
+.carousel-preview.slide-left {
+    animation: slideLeft 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+*/
+/* 预览图切换动画 - 向右移动 *//*
+.carousel-preview.slide-right {
+    animation: slideRight 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}*/
+
+/* 预览图片 */
+.preview-image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 1;
+    transition: all 0.3s ease;
+    border: 3px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 
+        0 0 0 2px rgba(255, 255, 255, 0.3),
+        0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-preview:hover .preview-image {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* 前后图片预览 */
+.preview-previous,
+.preview-next {
+    position: absolute;
+    width: 80px;
+    height: 120px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 4px;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 
+        0 0 0 1px rgba(255, 255, 255, 0.3),
+        0 5px 15px rgba(0, 0, 0, 0.3);
+    cursor: pointer; /* 添加指针样式，表明可以点击 */
+}
+/* 预览图悬停时的边框效果 */
+.preview-image:hover {
+    border-color: rgba(255, 255, 255, 1);
+}
+
+.preview-previous:hover,
+.preview-next:hover {
+    border-color: rgba(255, 255, 255, 1);
+}
+/* 调整前后预览图的位置 - 减小与主预览图的距离 */
+.preview-previous {
+    left: -80px;
+    transform: rotate(-3deg);
+}
+
+.preview-next {
+    right: -90px;
+    transform: rotate(3deg);
+}
+
+.carousel-preview:hover .preview-previous,
+.carousel-preview:hover .preview-next {
+    opacity: 0.9;
+    transform: rotate(0deg);
+}
+
+.preview-previous:hover,
+.preview-next:hover {
+    opacity: 1;
+    transform: scale(1.1) rotate(0deg);
+}
+
+/* 预览标签 */
+.preview-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 0 0 8px 8px;
+     display: none;
+}
+
+/* 轮播控制按钮 */
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 2rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 4;
+    transition: all 0.3s ease;
+    opacity: 0.7;
+}
+
+.carousel-control:hover {
+    background: rgba(0, 0, 0, 0.8);
+    opacity: 1;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-control-prev {
+    left: 30px;
+}
+
+.carousel-control-next {
+    right: 30px;
+}
+
+/* 轮播指示器 */
+.carousel-indicators {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    z-index: 4;
+}
+
+.carousel-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0.7;
+}
+
+.carousel-indicator:hover {
+    background: rgba(255, 255, 255, 0.8);
+    opacity: 1;
+}
+
+.carousel-indicator.active {
+    width: 30px;
+    border-radius: 6px;
+    background: white;
+    opacity: 1;
+}
+
+/* 定义向左移动动画 *//*
+@keyframes slideLeft {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-50px);
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}*/
+
+/* 定义向右移动动画 *//*
+@keyframes slideRight {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(50px);
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}*/
+/* 轮播项 - 只保留淡入淡出过渡 */
+.carousel-item {
+    transition: opacity 1.2s ease-in-out;
+}
+/* 激活的轮播项 */
+.carousel-item.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+/* 非激活的轮播项 */
+.carousel-item {
+    opacity: 0;
+    z-index: 1;
+}
+/* 响应式设计 */
+@media (max-width: 1200px) {
+    .bx-params-container {
+        gap: 30px;
+        max-width: 1100px;
+        padding: 20px;
+    }
+
+    .bx-preview {
+        height: 400px;
+    }
+
+    .bx-params-grid {
+        padding: 25px;
+    }
+
+    .bx-preview-section {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 992px) {
+    .carousel-content-wrapper {
+        flex-direction: column;
+        justify-content: center;
+        gap: 50px;
+        padding: 20px;
+    }
+    
+    .carousel-content {
+        text-align: center;
+        max-width: 100%;
+    }
+    
+    .carousel-preview {
+        width: 250px;
+        height: 350px;
+    }
+    
+    .preview-previous,
+    .preview-next {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-title-zh {
+        font-size: 2rem;
+    }
+    
+    .carousel-title-en {
+        font-size: 1.2rem;
+    }
+    
+    .carousel-description {
+        font-size: 1rem;
+    }
+    
+    .carousel-control {
+        width: 45px;
+        height: 45px;
+        font-size: 1.5rem;
+    }
+    
+    .carousel-control-prev {
+        left: 15px;
+    }
+    
+    .carousel-control-next {
+        right: 15px;
+    }
+    
+    .carousel-indicators {
+        gap: 10px;
+    }
+}
+/* 定义移动动画 */
+/**此内容上述部分为首页开屏轮播图相关内容**/
+
+/* 主内容区，可删除/替换页面内容 */
+.main-content {
+    margin-top: 20px;
+    color: #333;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.main-content h1 {
+    margin-bottom: 16px;
+    font-size: 32px;
+    color: #5D4037;
+    font-weight: bold;
+}
+
+.subtitle {
+    font-size: 18px;
+    color: #7f8c8d;
+    margin-bottom: 32px;
+    line-height: 1.5;
+}
+/**首页中间文字段**/
+
+/* 按钮组样式 */
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.nav-button {
+    padding: 12px 24px;
+    background-color: #f8f9fa;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    color: #2c3e50;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 120px;
+    
+}
+
+.nav-button:hover {
+    background-color:#8B4513;
+    border-color: #8B4513;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(139, 69, 19, 0.3);
+}
+.nav-button a{
+    text-decoration: none; /* 确保没有下划线 */
+    color: inherit; /* 确保文字颜色与按钮一致 */
+}
+.nav-button a:hover{
+    text-decoration: none; /* 鼠标悬停时也不显示下划线 */
+}
+/* 底部样式，可删除/替换页面内容 */
+footer {
+    background-color: #5D4037;
+    color: white;
+    padding: 24px 0;
+    text-align: center;
+    margin-top: 40px;
+}
+
+footer p {
+    font-size: 14px;
+    margin: 0;
+}
+/* 四大核心版块Z型布局样式 */
+.sections-container {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.sections-title {
+    text-align: center;
+    font-size: 36px;
+    color: #8B4513;
+    margin-bottom: 60px;
+    font-weight: bold;
+}
+
+.z-layout {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.z-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 80px;
+    gap: 60px;
+    transition: all 0.3s ease;
+}
+
+.z-section.reversed {
+    flex-direction: row-reverse;
+}
+
+.z-content {
+    flex: 1;
+    padding: 40px;
+}
+
+.z-image {
+    flex: 1;
+    height: 350px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.z-section:hover .z-image {
+    transform: scale(1.05);
+}
+
+.section-icon {
+    font-size: 56px;
+    margin-bottom: 20px;
+    color: #8B4513;
+}
+
+.section-title {
+    font-size: 32px;
+    color: #8B4513;
+    margin-bottom: 20px;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.section-description {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+    line-height: 1.8;
+}
+
+.section-link {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #8B4513;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.section-link:hover {
+    background-color: #5D4037;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Z型布局响应式设计 */
+@media (max-width: 992px) {
+    .z-section {
+        flex-direction: column;
+        gap: 30px;
+        margin-bottom: 60px;
+    }
+    
+    .z-section.reversed {
+        flex-direction: column;
+    }
+    
+    .z-content {
+        padding: 20px;
+        text-align: center;
+    }
+    
+    .z-image {
+        width: 100%;
+        height: 250px;
+    }
+    
+    .section-title {
+        font-size: 28px;
+    }
+    
+    .section-description {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sections-title {
+        font-size: 28px;
+        margin-bottom: 40px;
+    }
+    
+    .z-section {
+        margin-bottom: 50px;
+    }
+    
+    .z-content {
+        padding: 15px;
+    }
+    
+    .section-icon {
+        font-size: 48px;
+    }
+    
+    .section-title {
+        font-size: 24px;
+    }
+    
+    .z-image {
+        height: 200px;
+    }
+}
+/*页脚部分css属性，以下为页脚文字样式*/
+/*foote{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: white;
+    padding: 30px 0 20px;
+    z-index: 999;
+    box-shadow: 0-2px 10px rgba(0, 0, 0, 0.2);
+}*//**此处效果css属性无效果？若采用则会导致页脚部分长时间占据页面部分内容。**//*
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto 20px;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+.footer-scection{
+    flex: 1;
+    min-width: 220px;
+    padding: 0 20px;
+}
+.footer-section.brand h3 {
+    margin-bottom: 10px;
+    color: #D4AF37;
+    font-size: 24px;
+    font-weight: bold;
+}
+.footer-section.brand p {
+    margin-bottom: 8px;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+.heritage-tag {
+    color: #f39c12 !important;
+    font-size: 14px;
+}
+/* 社交媒体链接 *//*
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+.social-links a {
+    color: white;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+.social-links a:hover {
+    color: #D4AF37;
+    transform: translateY(-3px);
+}
+/* 快速链接 */
+.footer-section.quick-links h4 {
+    margin-bottom: 15px;
+    color: #D4AF37;
+    font-size: 18px;
+}
+.link-columns {
+    display: flex;
+    gap: 20px;
+}
+.link-columns ul {
+    list-style: none;
+    padding: 0;
+}
+.link-columns ul li {
+    margin-bottom: 8px;
+}
+.link-columns ul li a {
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    opacity: 0.9;
+    font-size: 14px;
+}
+.link-columns ul li a:hover {
+    color: #D4AF37;
+    padding-left: 5px;
+}
+/* 联系方式 *//*
+.footer-section.contact h4 {
+    margin-bottom: 15px;
+    color: #3498db;
+    font-size: 18px;
+}
+.contact-info {
+    list-style: none;
+    padding: 0;
+}
+.contact-info li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+    opacity: 0.9;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+.contact-icon {
+    font-style: normal;
+    color: #3498db;
+    margin-top: 3px;
+    flex-shrink: 0;
+}
+/* 页脚底部 *//*
+.footer-bottom {
+    text-align: center;
+    padding: 15px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+}
+.footer-bottom-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.legal-links a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    margin: 0 5px;
+    font-size: 13px;
+}
+.legal-links a:hover {
+    color: #D4AF37;
+}*/
+/* 返回顶部按钮 *//*
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #8B4513;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+.back-to-top.visible {
+    opacity: 0.8;
+    visibility: visible;
+}
+.back-to-top:hover {
+    opacity: 1;
+    transform: translateY(-3px);
+    background-color: #2980b9;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}*/
