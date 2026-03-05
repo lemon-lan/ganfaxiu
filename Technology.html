@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/Technnlogy.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/T-game.css">
+    <link rel="icon" type="img/icon/4t75p-0cyug-001.ico" href="img/icon/4t75p-0cyug-001.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/top-nav.js"></script>
+    <script src="js/backToTop.js"></script>
+    <script src="js/Technology.js"></script>
+    <script src="js/gongxu.js"></script>
+    <script src="js/T-game.js"></script>
+    <script src="js/gongju.js"></script>
+    <title>赣发绣：绣技</title>
+</head>
+
+<body>
+    <nav class="top-nav">
+        <div class="top-nav-container">
+            <div class="nav-logo">
+                <div class="logo-placeholder">
+                    <!-- 这里可以放置logo图片 -->
+                    <span class="logo-icon"><img src="img/icon/4t75p-0cyug-001.ico" alt=""></span>
+                </div>
+                <div class="logo-text">
+                    <h2>赣发绣</h2>
+                    <p class="logo-subtitle">江西非遗传承</p>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" id="nav-index">首页</a></li>
+                <li><a href="histroy.html" id="nav-history">绣源</a></li>
+                <li><a href="Technology.html" id="nav-service">绣技</a></li>
+                <li><a href="Inheritance.html" id="nav-case">绣传</a></li>
+                <li><a href="Innovation.html" id="nav-contact">绣新</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <div class="mian">
+        <div class="gongxu-section">
+            <div class="container">
+                <h1>传统工艺工序展示</h1>
+                <div class="main-content">
+                    <!-- 左侧阶段选择器 -->
+                    <div class="sidebar">
+                        <div class="sidebar-decoration"></div>
+                        <h3 class="sidebar-title">工艺阶段</h3>
+                        <div class="tabs">
+                            <button class="tab-button active" data-tab="preparation">准备阶段</button>
+                            <button class="tab-button" data-tab="production">生产阶段</button>
+                            <button class="tab-button" data-tab="finishing">完成阶段</button>
+                        </div>
+                    </div>
+                    <!-- 主视图区域 -->
+                    <div class="main-view">
+                        <div class="selected-process">
+                            <img src="img/gongxu/GX-1.png" alt="工序1" class="main-image" id="mainImage">
+                            <div class="main-info">
+                                <span class="process-number" id="mainNumber">01</span>
+                                <h3 class="process-name" id="mainName">挑选布料</h3>
+                                <p class="process-description" id="mainDescription">
+                                    传统的刺绣多以轻盈柔软的丝绢为载体，赣发绣则不同，底料所需的特质为密度高、布料结实，因而多选用高密度纯棉土布，使发丝与布料完美贴合，成品可水洗不脱色。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 右侧工序列表 -->
+                    <div class="process-list">
+                        <!-- 准备阶段工序 -->
+                        <div class="phase-processes active" id="preparation-processes">
+                            <!-- 工序1 -->
+                            <div class="process-item active" data-process="1">
+                                <img src="img/gongxu/GX-1.png" alt="工序1" class="item-image">
+                                <div class="item-info">
+                                    <span class="process-number">01</span>
+                                    <h4 class="process-name">原料筛选</h4>
+                                </div>
+                            </div>
+                            <!-- 工序2 -->
+                            <div class="process-item" data-process="2">
+                                <img src="img/gongxu/GX-2.png" alt="工序2" class="item-image">
+                                <div class="item-info">
+                                    <span class="process-number">02</span>
+                                    <h4 class="process-name">缝布边</h4>
+                                </div>
+                            </div>
+                            <!-- 工序3 -->
+                            <div class="process-item" data-process="3">
+                                <img src="img/gongxu/GX-3.png" alt="工序3" class="item-image">
+                                <div class="item-info">
+                                    <span class="process-number">03</span>
+                                    <h4 class="process-name">卷绷</h4>
+                                </div>
+                            </div>
+                            <!-- 工序4 -->
+                            <div class="process-item" data-process="4">
+                                <img src="img/gongxu/GX-4.png" alt="工序4" class="item-image">
+                                <div class="item-info">
+                                    <span class="process-number">04</span>
+                                    <h4 class="process-name">画稿</h4>
+                                </div>
+                            </div>
+                            <!-- 工序5 -->
+                            <div class="process-item" data-process="5">
+                                <img src="img/gongxu/GX-5.png" alt="工序5" class="item-image">
+                                <div class="item-info">
+                                    <span class="process-number">05</span>
+                                    <h4 class="process-name">拼接发丝</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 生产阶段工序 -->
+                        <div class="phase-processes" id="production-processes">
+                            <!-- 工序6 -->
+                            <div class="process-item" data-process="6">
+                                <img src="img/gongxu/GX-6.png" alt="工序6" class="item-image">
+                                <div class="item-info">
+                                    <span class="process-number">06</span>
+                                    <h4 class="process-name">选发</h4>
+                                </div>
+                            </div>
+                            <!-- 工序7 -->
+                            <div class="process-item" data-process="7">
+                                <img src="img/gongxu/GX-7.png" alt="工序7" class="item-image">
+                                <div class="item-info">
+                                    <span class="process-number">07</span>
+                                    <h4 class="process-name">整理材料</h4>
+                                </div>
+                            </div>
+                            <!-- 工序8 -->
+                            <div class="process-item" data-process="8">
+                                <img src="img/gongxu/GX-8.png" alt="工序8" class="item-image">
+                                <div class="item-info">
+                                    <span class="process-number">08</span>
+                                    <h4 class="process-name">烘干</h4>
+                                </div>
+                            </div>
+                            <!-- 工序9 -->
+                            <div class="process-item" data-process="9">
+                                <img src="img/gongxu/GX-9.png" alt="工序9" class="item-image">
+                                <div class="item-info">
+                                    <span class="process-number">09</span>
+                                    <h4 class="process-name">晾发</h4>
+                                </div>
+                            </div>
+                            <!-- 工序10 -->
+                            <div class="process-item" data-process="10">
+                                <img src="img/gongxu/GX-10.png" alt="工序10" class="item-image">
+                                <div class="item-info">
+                                    <span class="process-number">10</span>
+                                    <h4 class="process-name">漂染</h4>
+                                </div>
+                            </div>
+                            <!-- 工序11 -->
+                            <div class="process-item" data-process="11">
+                                <img src="img/gongxu/GX-11.png" alt="工序11" class="item-image">
+                                <div class="item-info">
+                                    <span class="process-number">11</span>
+                                    <h4 class="process-name">制色</h4>
+                                </div>
+                            </div>
+                            <!-- 工序12 -->
+                            <div class="process-item" data-process="12">
+                                <img src="img/gongxu/GX-12.png" alt="工序12" class="item-image">
+                                <div class="item-info">
+                                    <span class="process-number">12</span>
+                                    <h4 class="process-name">绣制</h4>
+                                </div>
+                            </div>
+                            <!-- 工序13 -->
+                            <div class="process-item" data-process="13">
+                                <img src="img/gongxu/GX-13.png" alt="工序13" class="item-image">
+                                <div class="item-info">
+                                    <span class="process-number">13</span>
+                                    <h4 class="process-name">托裱</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 完成阶段工序 -->
+                        <div class="phase-processes" id="finishing-processes">
+                            <!-- 工序14 -->
+                            <div class="process-item" data-process="14">
+                                <img src="img/gongxu/GX-14.png" alt="工序14" class="item-image">
+                                <div class="item-info">
+                                    <span class="process-number">14</span>
+                                    <h4 class="process-name">戳孔</h4>
+                                </div>
+                            </div>
+                            <!-- 工序15 -->
+                            <div class="process-item" data-process="15">
+                                <img src="img/gongxu/GX-15.png" alt="工序15" class="item-image">
+                                <div class="item-info">
+                                    <span class="process-number">15</span>
+                                    <h4 class="process-name">熨烫</h4>
+                                </div>
+                            </div>
+                            <!-- 工序16 -->
+                            <div class="process-item" data-process="16">
+                                <img src="img/gongxu/GX-16.png" alt="工序16" class="item-image">
+                                <div class="item-info">
+                                    <span class="process-number">16</span>
+                                    <h4 class="process-name">下绷</h4>
+                                </div>
+                            </div>
+                            <!-- 工序17 -->
+                            <div class="process-item" data-process="17">
+                                <img src="img/gongxu/GX-17.png" alt="工序17" class="item-image">
+                                <div class="item-info">
+                                    <span class="process-number">17</span>
+                                    <h4 class="process-name">去边</h4>
+                                </div>
+                            </div>
+                            <!-- 工序18 -->
+                            <div class="process-item" data-process="18">
+                                <img src="img/gongxu/GX-18.png" alt="工序18" class="item-image">
+                                <div class="item-info">
+                                    <span class="process-number">18</span>
+                                    <h4 class="process-name">装框</h4>
+                                </div>
+                            </div>
+                            <!-- 工序19 -->
+                            <div class="process-item" data-process="19">
+                                <img src="img/gongxu/GX-19.png" alt="工序19" class="item-image">
+                                <div class="item-info">
+                                    <span class="process-number">19</span>
+                                    <h4 class="process-name">装轴</h4>
+                                </div>
+                            </div>
+                            <!-- 工序20 -->
+                            <div class="process-item" data-process="20">
+                                <img src="img/gongxu/GX-20.png" alt="工序20" class="item-image">
+                                <div class="item-info">
+                                    <span class="process-number">20</span>
+                                    <h4 class="process-name">装凌布</h4>
+                                </div>
+                            </div>
+                            <!-- 工序21 -->
+                            <div class="process-item" data-process="21">
+                                <img src="img/gongxu/GX-21.png" alt="工序21" class="item-image">
+                                <div class="item-info">
+                                    <span class="process-number">21</span>
+                                    <h4 class="process-name">剪切</h4>
+                                </div>
+                            </div>
+
+                            <!-- 工序22 -->
+                            <div class="process-item" data-process="22">
+                                <img src="img/gongxu/GX-22.png" alt="工序22" class="item-image">
+                                <div class="item-info">
+                                    <span class="process-number">22</span>
+                                    <h4 class="process-name">质检</h4>
+                                </div>
+                            </div>
+
+                            <!-- 工序23 -->
+                            <div class="process-item" data-process="23">
+                                <img src="img/gongxu/GX-23.png" alt="工序23" class="item-image">
+                                <div class="item-info">
+                                    <span class="process-number">23</span>
+                                    <h4 class="process-name">修线头</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 工序内容区 -->
+        <div class="zhenfa"></div><!--绣法针法版块-->
+        <div class="gongju">
+            <div class="tools-container">
+                <header class="tools-header">
+                    <h1>赣发绣工具</h1>
+                    <p class="subtitle">传统工艺的传承与创新</p>
+                </header>
+
+                <div class="tools-grid">
+                    <div class="tool-card" data-tool="needle">
+                        <div class="tool-image-container">
+                            <img src="img/IMG-gongju-zheng-1.png" alt="绣针" class="tool-image">
+                        </div>
+                        <h3 class="tool-name">绣针</h3>
+                        <p class="tool-description">用于刺绣的专用针具，针尖锋利，针身光滑</p>
+                        <div class="tool-details">
+                            <p>绣针是赣发绣的核心工具，选用优质钢材制成，针身细长，针尖锐利，便于穿过发丝和布料。</p>
+                        </div>
+                    </div>
+
+                    <div class="tool-card" data-tool="scissors">
+                        <div class="tool-image-container">
+                            <img src="img/IMG-gongju-jiandao-1.png" alt="剪刀" class="tool-image">
+                        </div>
+                        <h3 class="tool-name">剪刀</h3>
+                        <p class="tool-description">用于裁剪丝线和布料的工具</p>
+                        <div class="tool-details">
+                            <p>专业绣剪，刀刃锋利，手柄舒适，用于精确裁剪丝线和布料，确保刺绣作品的整洁。</p>
+                        </div>
+                    </div>
+
+                    <div class="tool-card" data-tool="frame">
+                        <div class="tool-image-container">
+                            <img src="img/IMG-gongju-xiubeng-1.png" alt="绣绷" class="tool-image">
+                        </div>
+                        <h3 class="tool-name">绣绷</h3>
+                        <p class="tool-description">用于固定布料的工具，保持刺绣时的张力</p>
+                        <div class="tool-details">
+                            <p>绣绷由优质木材制成，可调节张力，确保布料平整，为刺绣提供稳定的工作表面。</p>
+                        </div>
+                    </div>
+
+                    <div class="tool-card" data-tool="stand">
+                        <div class="tool-image-container">
+                            <img src="img/IMG-gongju-fajia-1.png" alt="绣架" class="tool-image">
+                        </div>
+                        <h3 class="tool-name">绣架</h3>
+                        <p class="tool-description">支撑绣绷的架子，使刺绣更加舒适</p>
+                        <div class="tool-details">
+                            <p>绣架设计符合人体工学，可调节高度和角度，减轻刺绣时的疲劳，提高工作效率。</p>
+                        </div>
+                    </div>
+
+                    <div class="tool-card" data-tool="dye">
+                        <div class="tool-image-container">
+                            <img src="img/IMG-gongju-rangliao-2.png" alt="染料" class="tool-image">
+                        </div>
+                        <h3 class="tool-name">染料</h3>
+                        <p class="tool-description">用于给丝线染色的材料</p>
+                        <div class="tool-details">
+                            <p>天然植物染料，色彩丰富，环保无毒，为赣发绣提供鲜艳持久的色彩。</p>
+                        </div>
+                    </div>
+
+                    <div class="tool-card" data-tool="crucible">
+                        <div class="tool-image-container">
+                            <img src="img/IMG-gongxu-yanbo-1.png" alt="坩埚" class="tool-image">
+                        </div>
+                        <h3 class="tool-name">坩埚</h3>
+                        <p class="tool-description">用于加热和混合染料的容器</p>
+                        <div class="tool-details">
+                            <p>耐高温陶瓷坩埚，用于加热和混合染料，确保染料均匀溶解，颜色纯正。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 工具详情模态框 -->
+            <div class="tool-modal" id="toolModal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <div class="modal-header">
+                        <h2 id="modalTitle"></h2>
+                    </div>
+                    <div class="modal-body">
+                        <div class="modal-image">
+                            <img id="modalImage" src="" alt="">
+                        </div>
+                        <div class="modal-description" id="modalDescription"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--绣具版块-->
+        <div class="game-container">
+            <h1 class="game-title">赣发绣核心工序体验</h1>
+            <div class="game-levels">
+                <!-- 第一关：分丝挑战 -->
+                <div class="game-level" id="level1">
+                    <div class="level-header">
+                        <h2 class="level-title">第一关：分丝挑战</h2>
+                        <span class="level-status" id="level1-status">未完成</span>
+                    </div>
+                    <div class="level-content">
+                        <canvas id="canvas1" width="380" height="400"></canvas>
+                        <div class="level-instructions">
+                            <p>滑动屏幕拆分虚拟发丝至指定粗细</p>
+                            <p>提示：按住并拖动手指或鼠标，模拟分丝动作</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 第二关：针法匹配 -->
+                <div class="game-level" id="level2">
+                    <div class="level-header">
+                        <h2 class="level-title">第二关：针法匹配</h2>
+                        <span class="level-status" id="level2-status">未完成</span>
+                    </div>
+                    <div class="level-content">
+                        <canvas id="canvas2" width="380" height="400"></canvas>
+                        <div class="level-instructions">
+                            <p>根据提示点击对应针法动画</p>
+                            <p>提示：观察图案特点，选择正确的针法</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 第三关：色彩搭配 -->
+                <div class="game-level" id="level3">
+                    <div class="level-header">
+                        <h2 class="level-title">第三关：色彩搭配</h2>
+                        <span class="level-status" id="level3-status">未完成</span>
+                    </div>
+                    <div class="level-content">
+                        <canvas id="canvas3" width="380" height="400"></canvas>
+                        <div class="level3-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="level3-progress-fill"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="level-instructions">
+                        <p>为赣鄱山水题材选择契合的植物染色彩</p>
+                        <p>提示：点击颜色块进行选择，匹配山水意境</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 视频区域 -->
+        <div class="video-section" id="video-section">
+            <h2 class="video-title">🎉 恭喜完成所有挑战！</h2>
+            <div class="video-container">
+                <video id="tutorial-video" controls>
+                    <source src="video/BS_FX_jishu.mp4" type="video/mp4">
+                    您的浏览器不支持视频播放。
+                </video>
+            </div>
+            <p style="margin-top: 20px; color: #666; font-size: 16px;">
+                观看赣发绣传承人专属教学视频，学习更多发绣技巧！
+            </p>
+        </div>
+    </div><!--绣技游戏版块-->
+    </div><!--主要内容版块-->
+
+    <footer>
+        <div class="footer-content">
+            <!-- 品牌信息 -->
+            <div class="footer-section brand">
+                <h3>赣发绣</h3>
+                <p>青丝载忆，数字传情</p>
+                <p class="heritage-tag">江西非物质文化遗产保护项目</p>
+                <!-- 社交媒体链接 -->
+                <div class="social-links">
+                    <a href="#" title="微信公众号"><i class="social-icon">📱</i></a>
+                    <a href="#" title="微博"><i class="social-icon">🐦</i></a>
+                    <a href="#" title="抖音"><i class="social-icon">🎵</i></a>
+                    <a href="#" title="小红书"><i class="social-icon">📕</i></a>
+                </div>
+            </div>
+            <!-- 联系方式 -->
+            <div class="footer-section contact">
+                <h4>联系我们</h4>
+                <ul class="contact-info">
+                    <li><i class="contact-icon">📍</i> 江西省南昌市文化艺术中心</li>
+                    <li><i class="contact-icon">📞</i> 0791-12345678</li>
+                    <li><i class="contact-icon">📧</i> info@ganfaxiu.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p>&copy; 2026 赣发绣文化传承中心. 保留所有权利.</p>
+                <div class="legal-links">
+                    <a href="#">隐私政策</a>
+                    <span>|</span>
+                    <a href="#">服务条款</a>
+                </div>
+            </div>
+        </div>
+        <!-- 返回顶部按钮 -->
+        <button id="backToTop" class="back-to-top" title="返回顶部">↑</button>
+    </footer><!--网页页面页脚-->
+
+</body>
+
+
+</html>

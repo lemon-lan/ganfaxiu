@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/In_ance.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/In_ance_jiaoxue.css">
+   <!--<link rel="stylesheet" href="css/In_ance_Bx.css">--><!--暂时不用，先注释掉相关属性已写入In_ance文件夹中-->
+    <script src="js/top-nav.js"></script>
+    <script src="js/In_ance.js"></script>
+    <script src="js/In_ance_jiaoxue.js"></script>
+    <script src="js/In_ance_Bx.js"></script>
+    <link rel="icon" type="img/icon/4t75p-0cyug-001.ico" href="img/icon/4t75p-0cyug-001.ico">
+    <title>赣发绣：绣传</title>
+</head>
+
+<body>
+    <nav class="top-nav">
+        <div class="top-nav-container">
+            <div class="nav-logo">
+                <div class="logo-placeholder">
+                    <!-- 这里可以放置logo图片 -->
+                    <span class="logo-icon"><img src="img/icon/4t75p-0cyug-001.ico" alt=""></span>
+                </div>
+                <div class="logo-text">
+                    <h2>赣发绣</h2>
+                    <p class="logo-subtitle">江西非遗传承</p>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" id="nav-index">首页</a></li>
+                <li><a href="histroy.html" id="nav-history">绣源</a></li>
+                <li><a href="Technology.html" id="nav-service">绣技</a></li>
+                <li><a href="Inheritance.html" id="nav-case">绣传</a></li>
+                <li><a href="Innovation.html" id="nav-contact">绣新</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <div class="jaioxue">
+        <!-- 工艺技法区域 -->
+        <section class="gongyi-section">
+            <div class="gongyi-container">
+                <h2 class="gongyi-title">发绣工艺技法</h2>
+                <p class="gongyi-description">探索发绣艺术的传统工艺与现代创新，了解每一个关键步骤的精妙之处</p>
+
+                <!-- 图文+视频分栏布局 -->
+                <div class="gongyi-content">
+                    <!-- 视频区域 -->
+                    <div class="gongyi-video-container">
+                        <div class="video-wrapper">
+                            <video id="gongyi-video" controls poster="img/IMG-xiuxin-jiaoxue-1.png"><!--视频封面-->
+                                <source src="video/In-ance_jiaoxue.mp4" type="video/mp4">
+                                您的浏览器不支持视频播放
+                            </video>
+                            <!-- 视频关键步骤进度条 -->
+                            <div class="video-timeline">
+                                <div class="timeline-track">
+                                    <div class="timeline-progress" id="timeline-progress"></div>
+                                    <!-- 关键步骤标记 -->
+                                    <div class="timeline-markers">
+                                        <div class="timeline-marker" data-time="0" data-step="1" title="准备发丝">
+                                            <div class="marker-dot"></div>
+                                            <div class="marker-label">准备发丝</div>
+                                        </div>
+                                        <div class="timeline-marker" data-time="13" data-step="2" title="设计图案">
+                                            <div class="marker-dot"></div>
+                                            <div class="marker-label">设计图案</div>
+                                        </div>
+                                        <div class="timeline-marker" data-time="84" data-step="3" title="绷框">
+                                            <div class="marker-dot"></div>
+                                            <div class="marker-label">穿线</div>
+                                        </div>
+                                        <div class="timeline-marker" data-time="131" data-step="4" title="配线">
+                                            <div class="marker-dot"></div>
+                                            <div class="marker-label">绣制</div>
+                                        </div>
+                                        <!---
+                                        <div class="timeline-marker" data-time="217" data-step="5" title="刺绣">
+                                            <div class="marker-dot"></div>
+                                            <div class="marker-label">刺绣</div>
+                                        </div>
+                                        
+                                        <div class="timeline-marker" data-time="180" data-step="6" title="装裱">
+                                            <div class="marker-dot"></div>
+                                            <div class="marker-label">装裱</div>
+                                        </div>暂时注销-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 图文区域 -->
+                    <div class="gongyi-info-container">
+                        <div class="gongyi-steps">
+                            <!-- 步骤1：准备发丝 -->
+                            <div class="gongyi-step active" data-step="1">
+                                <h3 class="step-title">准备发丝</h3>
+                                <div class="step-content">
+                                    <img src="img/IMG-chuan-1-1.png" alt="准备发丝" class="step-image">
+                                    <p class="step-description">
+                                        头发质量不一，有粗有细，无法像普通的线一样劈丝。而不同的作品需要选择头发的粗细、软硬等也有所不同。</p>
+                                    <ul class="step-details">
+                                        <li>选择健康、光泽好的人发</li>
+                                        <li>使用专用洗发水清洗，去除油脂</li>
+                                        <li>自然晾干，避免阳光直射</li>
+                                        <li>按长度和粗细分类整理</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- 步骤2：设计图案 -->
+                            <div class="gongyi-step" data-step="2">
+                                <h3 class="step-title">设计图案</h3>
+                                <div class="step-content">
+                                    <img src="img/IMG-chuan-1-2.png" alt="设计图案" class="step-image">
+                                    <p class="step-description">与其他绣品不同的是，赣发绣为绣画一体，因而传统赣发绣对绣工要求极高，需掌握绘画、书法、素描等技法手工起稿。而在现代非遗的普及教学中，会采用打印的底稿，降低入门门槛。</p>
+                                    <ul class="step-details">
+                                        <li>根据发绣特点设计图案</li>
+                                        <li>考虑发丝的颜色和质感</li>
+                                        <li>调整图案比例和细节</li>
+                                        <li>绘制或打印设计稿</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- 步骤3：绷框 -->
+                            <div class="gongyi-step" data-step="3">
+                                <h3 class="step-title">穿“线”</h3>
+                                <div class="step-content">
+                                    <img src="img/IMG-chuan-1-3.png" alt="穿线" class="step-image">
+                                    <p class="step-description">赣发绣 “穿线”（发丝穿针）的核心是通过发丝预处理、精准穿针与固定，确保发丝顺畅入针且不易滑脱断裂，为后续绣制奠定基础。</p>
+                                    <ul class="step-details">
+                                        <li>选用柔顺长发，洗净分类后劈成细丝</li>
+                                        <li>采用折线穿针法或穿针器辅助，轻柔将发丝穿入针孔</li>
+                                        <li>将发丝一端绕小圈套针抽紧，另一端打结，防止起针时线头滑出</li>
+                                        <li>避免发丝断裂，轻微捻搓发丝防滑，根据绣区控制发丝长度</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- 步骤4：配线 -->
+                            <div class="gongyi-step" data-step="4">
+                                <h3 class="step-title">绣制</h3>
+                                <div class="step-content">
+                                    <img src="img/IMG-chuan-1-4.png" alt="绣制" class="step-image">
+                                    <p class="step-description">赣发绣的针法多种多样。在绣制过程中，头发脆弱易断且打滑，难以与布料服贴，在绣制的过程中对针法的要求非常高：发根绣轮廓、发梢绣细节，正反两面平整光洁，做到针脚细密、不露底、不跳线。</p>
+                                    <ul class="step-details">
+                                        <li>用专用发绣针</li>
+                                        <li>掌握正确的针法</li>
+                                        <li>保持刺绣密度均匀</li>
+                                        <li>注意线条的流畅性</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- 步骤5：刺绣 -->
+                            <div class="gongyi-step" data-step="5">
+                                <h3 class="step-title">刺绣</h3>
+                                <div class="step-content">
+                                    <img src="img/step5.jpg" alt="刺绣" class="step-image">
+                                    <p class="step-description">使用专用的发绣针法，将发丝绣制在绣布上。刺绣时要注意针法的一致性和密度，确保图案清晰、立体感强。</p>
+                                    <ul class="step-details">
+                                        <li>使用专用发绣针</li>
+                                        <li>掌握正确的针法</li>
+                                        <li>保持刺绣密度均匀</li>
+                                        <li>注意线条的流畅性</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- 步骤6：装裱 -->
+                            <div class="gongyi-step" data-step="6">
+                                <h3 class="step-title">装裱</h3>
+                                <div class="step-content">
+                                    <img src="img/step6.jpg" alt="装裱" class="step-image">
+                                    <p class="step-description">传统的刺绣多以轻盈柔软的丝绢为载体，赣发绣则不同，底料所需的特质为密度高、布料结实，因而多选用高密度纯棉土布，使发丝与布料完美贴合，成品可水洗不脱色。</p>
+                                    <ul class="step-details">
+                                        <li>选择优质装裱材料</li>
+                                        <li>专业装裱工艺处理</li>
+                                        <li>注意防潮防虫</li>
+                                        <li>选择合适的框架</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div><!--教学版块-->
+    <div class="shuzifaxiu">
+        <div class="bx-generator">
+            <header class="bx-header">
+                <div class="bx-header-content">
+                    <h1>数字发绣生成器</h1>
+                    <p>将普通图片转换为精美的发绣艺术作品</p>
+                </div>
+            </header>
+
+            <main class="bx-main">
+                <!-- 步骤导航 -->
+                <div class="bx-steps">
+                    <div class="bx-step active" data-step="1">
+                        <div class="bx-step-number">1</div>
+                        <div class="bx-step-title">上传图片</div>
+                    </div>
+                    <div class="bx-step" data-step="2">
+                        <div class="bx-step-number">2</div>
+                        <div class="bx-step-title">选择风格</div>
+                    </div>
+                    <div class="bx-step" data-step="3">
+                        <div class="bx-step-number">3</div>
+                        <div class="bx-step-title">调整参数</div>
+                    </div>
+                    <div class="bx-step" data-step="4">
+                        <div class="bx-step-number">4</div>
+                        <div class="bx-step-title">导出作品</div>
+                    </div>
+                </div>
+
+                <!-- 步骤内容 -->
+                <div class="bx-step-content">
+                    <!-- 步骤1：上传图片 -->
+                    <div class="bx-step-panel active" data-step="1">
+                        <div class="bx-upload-section">
+                            <div class="bx-upload-area" id="uploadArea">
+                                <div class="bx-upload-icon">📷</div>
+                                <h3>点击或拖拽上传图片</h3>
+                                <p>支持 JPG、PNG 格式，建议尺寸不超过 2000×2000</p>
+                                <input type="file" id="imageUpload" accept="image/*" style="display: none;">
+                            </div>
+                            <div class="bx-preview-container" id="previewContainer" style="display: none;">
+                                <h3>预览效果</h3>
+                                <div class="bx-preview" id="imagePreview"></div>
+                                <button class="bx-btn bx-btn-secondary" id="reuploadBtn">重新上传</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 步骤2：选择风格 -->
+                    <div class="bx-step-panel" data-step="2">
+                        <div class="bx-style-section">
+                            <h3>选择发绣风格</h3>
+                            <div class="bx-style-options">
+                                <div class="bx-style-option active" data-style="traditional">
+                                    <div class="bx-style-preview">
+                                        <div class="bx-style-sample traditional"></div>
+                                    </div>
+                                    <div class="bx-style-name">传统发绣</div>
+                                </div>
+                                <div class="bx-style-option" data-style="modern">
+                                    <div class="bx-style-preview">
+                                        <div class="bx-style-sample modern"></div>
+                                    </div>
+                                    <div class="bx-style-name">现代简约</div>
+                                </div>
+                                <div class="bx-style-option" data-style="sketch">
+                                    <div class="bx-style-preview">
+                                        <div class="bx-style-sample sketch"></div>
+                                    </div>
+                                    <div class="bx-style-name">素描风格</div>
+                                </div>
+                                <div class="bx-style-option" data-style="colorful">
+                                    <div class="bx-style-preview">
+                                        <div class="bx-style-sample colorful"></div>
+                                    </div>
+                                    <div class="bx-style-name">彩色发绣</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 步骤3：调整参数 -->
+                    <div class="bx-step-panel" data-step="3">
+                        <div class="bx-params-section">
+                            <h3>调整参数</h3>
+                            <div class="bx-params-container">
+                                <div class="bx-params-grid">
+                                    <div class="bx-param-item">
+                                        <label for="density">发丝密度</label>
+                                        <input type="range" id="density" min="10" max="100" value="50">
+                                        <span class="bx-param-value" id="densityValue">50</span>
+                                    </div>
+                                    <div class="bx-param-item">
+                                        <label for="contrast">对比度</label>
+                                        <input type="range" id="contrast" min="0" max="200" value="100">
+                                        <span class="bx-param-value" id="contrastValue">100</span>
+                                    </div>
+                                    <div class="bx-param-item">
+                                        <label for="brightness">亮度</label>
+                                        <input type="range" id="brightness" min="0" max="200" value="100">
+                                        <span class="bx-param-value" id="brightnessValue">100</span>
+                                    </div>
+                                    <div class="bx-param-item">
+                                        <label for="detail">细节保留</label>
+                                        <input type="range" id="detail" min="0" max="100" value="70">
+                                        <span class="bx-param-value" id="detailValue">70</span>
+                                    </div>
+                                </div>
+                                <div class="bx-preview-section">
+                                    <h4>实时预览</h4>
+                                    <div class="bx-preview" id="paramsPreview"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 步骤4：导出作品 -->
+                    <div class="bx-step-panel" data-step="4">
+                        <div class="bx-export-section">
+                            <h3>导出作品</h3>
+                            <div class="bx-export-container">
+                                <div class="bx-export-preview">
+                                    <div class="bx-preview" id="exportPreview"></div>
+                                </div>
+                                <div class="bx-export-options">
+                                    <div class="bx-export-format">
+                                        <label>导出格式</label>
+                                        <select id="exportFormat">
+                                            <option value="png">PNG (无损)</option>
+                                            <option value="jpg">JPG (高质量)</option>
+                                            <option value="svg">SVG (矢量)</option>
+                                        </select>
+                                    </div>
+                                    <div class="bx-export-size">
+                                        <label>导出尺寸</label>
+                                        <select id="exportSize">
+                                            <option value="original">原始尺寸</option>
+                                            <option value="512">512×512</option>
+                                            <option value="1024">1024×1024</option>
+                                            <option value="2048">2048×2048</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="bx-export-actions">
+                                    <button class="bx-btn bx-btn-primary" id="exportBtn">导出作品</button>
+                                </div>
+                                <div class="bx-export-tips">
+                                    <p>📌 提示：导出的作品可直接用于打印或分享</p>
+                                    <p>🎨 建议：对于复杂图像，选择 PNG 格式以获得最佳效果</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 导航按钮 -->
+                <div class="bx-navigation">
+                    <div class="bx-navigation-buttons">
+                        <button class="bx-btn bx-btn-secondary" id="prevBtn" disabled>上一步</button>
+                        <button class="bx-btn bx-btn-primary" id="nextBtn">下一步</button>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div><!--数字发绣模块  -->
+    <div class="linian">
+        <!-- 传承理念区域 -->
+     <div class="page-container">
+        <!-- 传承理念区域 -->
+        <div class="inheritance-section">
+            <div class="section-header">
+                <h2 class="section-title">传承理念</h2>
+                <div class="decorative-line"></div>
+            </div>
+            <p class="section-description">赣发绣作为江西非物质文化遗产，承载着深厚的历史文化底蕴和独特的艺术价值，我们致力于传承和弘扬这一古老工艺。</p>
+            
+            <div class="inheritance-content">
+                <!-- 视频部分 -->
+                <div class="inheritance-video">
+                    <div class="video-wrapper">
+                        <video  loop playsinline id="inheritanceVideo">
+                            <source src="video/BS_GFX_chuancheng.mp4" type="video/mp4">
+                            您的浏览器不支持视频播放
+                        </video>
+                        <div class="video-overlay"></div>
+                        <div class="video-controls">
+                            <button class="play-pause-btn" id="playPauseBtn">
+                                <span class="play-icon">▶</span>
+                                <span class="pause-icon">❚❚</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 文案部分 -->
+                <div class="inheritance-text">
+                    <div class="text-container">
+                        <p>赣发绣，作为江西独有的传统工艺，有着悠久的历史和深厚的文化底蕴。它起源于唐代，兴盛于明清，是我国刺绣艺术中的瑰宝。</p>
+                        <p>赣发绣以人的头发为材料，通过特殊的工艺处理，制作出精美的刺绣作品。这种工艺不仅需要精湛的技艺，更需要耐心和毅力。每一件赣发绣作品都凝聚着绣工的心血和智慧，是对传统文化的传承和创新。</p>
+                        <p>在现代社会，我们面临着传统工艺传承的挑战。为了让赣发绣这一古老工艺焕发出新的生命力，我们积极探索创新之路，将传统工艺与现代设计相结合，创作具有时代特色的新作品。</p>
+                        <p>我们相信，只有在传承中创新，在创新中传承，才能让赣发绣这一非物质文化遗产得以延续和发展。我们致力于培养新一代的赣发绣传承人，让这一古老工艺在现代社会中绽放出更加绚丽的光彩。</p>
+                        <p>同时，我们也希望通过各种渠道，向更多的人介绍赣发绣的历史和文化，让更多的人了解和喜爱这一传统工艺。我们相信，只有让更多的人参与到赣发绣的传承和保护中来，才能让这一古老工艺真正融入现代生活，成为我们文化自信的重要组成部分。</p>
+                    </div>
+                    <button class="expand-btn" onclick="toggleExpand(this)">展开</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div><!--传承理念版块-->
+    <div class="liuyan"><!--留言板内容-->
+        <div class="wall-container">
+            <!-- 便利贴1 -->
+            <div class="note" style="top: 10%; left: 5%; transform: rotate(-3deg);">
+                <div class="note-header">
+                    <span class="note-id">第[49568]条</span>
+                    <span class="note-time">2024-06-22 02:30:00</span>
+                    <button class="note-close">×</button>
+                </div>
+                <div class="note-content">
+                    <p>今天哪里的烟花最好看！！？</p>
+                    <p>答: 朋友圈。。。</p>
+                    <div class="note-decoration">
+                        <div class="lollipop"></div>
+                    </div>
+                    <p class="note-signature">哎呦哎呦</p>
+                </div>
+                <div class="note-tapes">
+                    <div class="tape"></div>
+                    <div class="tape"></div>
+                    <div class="tape"></div>
+                    <div class="tape"></div>
+                    <div class="tape"></div>
+                </div>
+            </div>
+
+            <!-- 便利贴2 -->
+            <div class="note" style="top: 15%; left: 25%; transform: rotate(2deg);">
+                <div class="note-header">
+                    <span class="note-id">第[49568]条</span>
+                    <span class="note-time">2024-06-22 02:30:00</span>
+                    <button class="note-close">×</button>
+                </div>
+                <div class="note-content">
+                    <p>你们地球人，月亮有什么好</p>
+                    <p>是坑，还是对面那哥们好</p>
+                    <div class="note-decoration">
+                        <div class="lollipop"></div>
+                    </div>
+                    <p class="note-signature">哎呦杰杰</p>
+                </div>
+                <div class="note-tapes">
+                    <div class="tape"></div>
+                    <div class="tape"></div>
+                    <div class="tape"></div>
+                    <div class="tape"></div>
+                    <div class="tape"></div>
+                </div>
+            </div>
+
+            <!-- 便利贴3 -->
+            <div class="note" style="top: 45%; left: 10%; transform: rotate(-5deg);">
+                <div class="note-header">
+                    <span class="note-id">第[49568]条</span>
+                    <span class="note-time">2024-06-22 02:30:00</span>
+                    <button class="note-close">×</button>
+                </div>
+                <div class="note-content">
+                    <p>元宵节快乐</p>
+                    <div class="note-decoration">
+                        <div class="lollipop"></div>
+                    </div>
+                    <p class="note-signature">雷锋ii.</p>
+                </div>
+                <div class="note-tapes">
+                    <div class="tape"></div>
+                    <div class="tape"></div>
+                    <div class="tape"></div>
+                    <div class="tape"></div>
+                    <div class="tape"></div>
+                </div>
+            </div>
+
+            <!-- 便利贴4 -->
+            <div class="note" style="top: 50%; left: 30%; transform: rotate(1deg);">
+                <div class="note-header">
+                    <span class="note-id">第[49568]条</span>
+                    <span class="note-time">2024-06-18 12:40:00</span>
+                    <button class="note-close">×</button>
+                </div>
+                <div class="note-content">
+                    <p>常要说的事儿是乐生于苦</p>
+                    <div class="note-decoration">
+                        <div class="lollipop"></div>
+                    </div>
+                    <p class="note-signature">没猴哥，不春晚</p>
+                </div>
+                <div class="note-tapes">
+                    <div class="tape"></div>
+                    <div class="tape"></div>
+                    <div class="tape"></div>
+                    <div class="tape"></div>
+                    <div class="tape"></div>
+                </div>
+            </div>
+
+            <!-- 便利贴5 -->
+            <div class="note" style="top: 20%; left: 60%; transform: rotate(3deg);">
+                <div class="note-header">
+                    <span class="note-id">第[49568]条</span>
+                    <span class="note-time">2024-06-18 12:40:00</span>
+                    <button class="note-close">×</button>
+                </div>
+                <div class="note-content">
+                    <p>今天天气不错，风和日丽的</p>
+                    <div class="note-decoration">
+                        <div class="lollipop"></div>
+                    </div>
+                    <p class="note-signature">haha</p>
+                </div>
+                <div class="note-tapes">
+                    <div class="tape"></div>
+                    <div class="tape"></div>
+                    <div class="tape"></div>
+                    <div class="tape"></div>
+                    <div class="tape"></div>
+                </div>
+            </div>
+
+            <!-- 便利贴6 -->
+            <div class="note" style="top: 40%; left: 55%; transform: rotate(-2deg);">
+                <div class="note-header">
+                    <span class="note-id">第[49568]条</span>
+                    <span class="note-time">2024-06-22 01:30:00</span>
+                    <button class="note-close">×</button>
+                </div>
+                <div class="note-content">
+                    <p>据说今晚央视的元宵晚会导演和春晚</p>
+                    <p>导演是同一个人，真是躲得过初一，</p>
+                    <p>躲不过十五。</p>
+                    <div class="note-decoration">
+                        <div class="lollipop"></div>
+                    </div>
+                    <p class="note-signature">哎呦哥哥.</p>
+                </div>
+                <div class="note-tapes">
+                    <div class="tape"></div>
+                    <div class="tape"></div>
+                    <div class="tape"></div>
+                    <div class="tape"></div>
+                    <div class="tape"></div>
+                </div>
+            </div>
+        </div>
+        <!-- 添加便利贴的表单 -->
+        <div class="note-form-container">
+            <h2>添加新便利贴</h2>
+            <form id="noteForm">
+                <div class="form-group">
+                    <label for="noteContent">内容</label>
+                    <textarea id="noteContent" rows="4" required placeholder="写下你的想法..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label>标签</label>
+                    <div class="tag-options">
+                        <label class="tag-option">
+                            <input type="radio" name="noteTag" value="故事" checked>
+                            <span class="tag">故事</span>
+                        </label>
+                        <label class="tag-option">
+                            <input type="radio" name="noteTag" value="提问">
+                            <span class="tag">提问</span>
+                        </label>
+                        <label class="tag-option">
+                            <input type="radio" name="noteTag" value="祝福">
+                            <span class="tag">祝福</span>
+                        </label>
+                        <label class="tag-option">
+                            <input type="radio" name="noteTag" value="感悟">
+                            <span class="tag">感悟</span>
+                        </label>
+                        <label class="tag-option">
+                            <input type="radio" name="noteTag" value="其他">
+                            <span class="tag">其他</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="noteSignature">签名</label>
+                    <input type="text" id="noteSignature" required placeholder="你的名字或昵称">
+                </div>
+                <button type="submit" class="add-note-btn">添加便利贴</button>
+            </form>
+        </div>
+    </div><!--用户留言板-->
+    <div class="fenxiang">
+        <div class="main-container">
+            <button class="share-btn" id="openShareModal">分享作品</button>
+        </div>
+
+        <!-- 分享弹窗 -->
+        <div class="simple-share-modal" id="simpleShareModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>分享发绣作品</h3>
+                    <button class="modal-close" id="closeShareModal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <!-- 随机内容展示 -->
+                    <div class="random-content">
+                        <div class="content-image" id="contentImage">
+                            <img src="img/IMG_2162.png" alt="发绣作品" id="displayImage">
+                        </div>
+                        <div class="content-info">
+                            <h4 id="contentTitle">传统发绣技艺</h4>
+                            <p id="contentDesc">展示传统赣发绣的精湛技艺，传承千年文化瑰宝</p>
+                            <div class="content-tags" id="contentTags">
+                                <span class="tag">#赣发绣</span>
+                                <span class="tag">#传统工艺</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 操作按钮 -->
+                    <div class="modal-actions">
+                        <button class="modal-btn" id="randomizeBtn">随机内容</button>
+                        <button class="modal-btn primary" id="shareBtn">分享</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 分享成功提示 -->
+        <div class="share-success" id="shareSuccess">
+            <div class="success-content">
+                <h4>分享成功！</h4>
+                <p>感谢你的分享</p>
+                <button class="success-btn" id="closeSuccess">确定</button>
+            </div>
+        </div>
+    </div><!--分享模块-->
+    <footer>
+    <div class="footer-content">
+        <!-- 品牌信息 -->
+        <div class="footer-section brand">
+            <h3>赣发绣</h3>
+            <p>青丝载忆，数字传情</p>
+            <p class="heritage-tag">江西非物质文化遗产保护项目</p>
+            <!-- 社交媒体链接 -->
+            <div class="social-links">
+                <a href="#" title="微信公众号"><i class="social-icon">📱</i></a>
+                <a href="#" title="微博"><i class="social-icon">🐦</i></a>
+                <a href="#" title="抖音"><i class="social-icon">🎵</i></a>
+                <a href="#" title="小红书"><i class="social-icon">📕</i></a>
+            </div>
+        </div>
+        <!-- 联系方式 -->
+        <div class="footer-section contact">
+            <h4>联系我们</h4>
+            <ul class="contact-info">
+                <li><i class="contact-icon">📍</i> 江西省南昌市文化艺术中心</li>
+                <li><i class="contact-icon">📞</i> 0791-12345678</li>
+                <li><i class="contact-icon">📧</i> info@ganfaxiu.com</li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="footer-bottom-content">
+            <p>&copy; 2026 赣发绣文化传承中心. 保留所有权利.</p>
+            <div class="legal-links">
+                <a href="#">隐私政策</a>
+                <span>|</span>
+                <a href="#">服务条款</a>
+            </div>
+        </div>
+    </div>
+    <!-- 返回顶部按钮 -->
+    <button id="backToTop" class="back-to-top" title="返回顶部">↑</button>
+</footer><!--网页页面页脚-->
+</body>
+
+
+</html>

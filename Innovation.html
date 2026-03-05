@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/In_tion.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <script src="js/top-nav.js"></script>
+    <script src="js/yingyong.js"></script>
+    <script src="js/In_tion.js"></script>
+    <script src="js/backToTop.js"></script>
+    <link rel="icon" type="img/icon/4t75p-0cyug-001.ico" href="img/icon/4t75p-0cyug-001.ico">
+    <title>赣发绣：绣新</title>
+</head>
+
+<body>
+    <nav class="top-nav">
+        <div class="top-nav-container">
+            <div class="nav-logo">
+                <div class="logo-placeholder">
+                    <!-- 这里可以放置logo图片 -->
+                    <span class="logo-icon"><img src="img/icon/4t75p-0cyug-001.ico" alt=""></span>
+                </div>
+                <div class="logo-text">
+                    <h2>赣发绣</h2>
+                    <p class="logo-subtitle">江西非遗传承</p>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" id="nav-index">首页</a></li>
+                <li><a href="histroy.html" id="nav-history">绣源</a></li>
+                <li><a href="Technology.html" id="nav-service">绣技</a></li>
+                <li><a href="Inheritance.html" id="nav-case">绣传</a></li>
+                <li><a href="Innovation.html" id="nav-contact">绣新</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <div class="yingyong">
+        <h1>赣发绣创新应用</h1>
+        <div class="card-container">
+            <div class="card"
+                onclick="openModal('数字化设计', '第十八代传承人刘昱含利用现代技术将n微型NFC芯片隐秘嵌入绣品装裱或绣面底层，当用手机轻触绣品时，便会自动播放作品背后的情感记忆，如结发夫妻绣有两人的爱情故事，胎发绣会有婴孩刚刚出生的啼哭。让静态发丝绣品成为“会说话的文化载体”，打造出“可触摸、可互动、可溯源”的沉浸式作品。')">
+                <div class="card-image">
+                    <img src="img/IMG-xiuxin-shuzi-1.png" alt="数字化设计">
+                </div>
+                <div class="card-content">
+                    <div class="card-title">数字化设计</div>
+                    <div class="card-desc">引入数字化设计技术，实现传统图案的精准复刻与创新设计，提高创作效率和作品精度。</div>
+                </div>
+            </div>
+            <div class="card"
+                onclick="openModal('现代艺术融合', '我们积极融合现代艺术元素，创作具有时代特色的新题材作品。通过与现代艺术家的合作，我们将抽象艺术、装置艺术等现代艺术形式与传统发绣相结合，拓展了发绣的艺术表现力。我们的现代题材作品，不仅包括现代人物肖像、城市风光等写实题材，也包括抽象图案、几何图形等非写实题材。这些作品既保留了发绣的传统特色，又展现了现代艺术的时尚感，受到了年轻一代的喜爱。现代艺术的融合，使得赣发绣不再局限于传统的书画题材，而是成为一种具有现代审美价值的艺术形式，为这一古老工艺注入了新的活力。')">
+                <div class="card-image">
+                    <img src="img/IMG-xiuxin-yingyong-1.png" alt="现代艺术融合">
+                </div>
+                <div class="card-content">
+                    <div class="card-title">现代艺术融合</div>
+                    <div class="card-desc">融合现代艺术元素，创作具有时代特色的新题材作品，拓展发绣的艺术表现力。</div>
+                </div>
+            </div>
+            <div class="card"
+                onclick="openModal('新型发线工艺', '我们开发了新型发线处理工艺，通过特殊的化学处理和物理加工，提高了发线的韧性和色彩稳定性。处理后的发线更加柔软、光滑，易于刺绣，同时也更加耐光、耐水，延长了作品的保存时间。我们还研究了不同人种、不同年龄段头发的特性，开发了针对不同发质的处理工艺，使得发绣能够使用更多种类的头发，丰富了作品的色彩层次。新型发线工艺的应用，不仅提高了发绣的作品质量，也扩大了发绣的材料来源，为发绣的发展提供了更广阔的空间。')">
+                <div class="card-image">
+                    <img src="img/IMG-xinxingongyi-1.png" alt="新型发线工艺">
+                </div>
+                <div class="card-content">
+                    <div class="card-title">新型发线工艺</div>
+                    <div class="card-desc">开发新型发线处理工艺，提高发线的韧性和色彩稳定性，延长作品的保存时间。</div>
+                </div>
+            </div>
+
+            <!-- 弹窗遮罩层 -->
+            <div class="modal-overlay" id="modalOverlay" onclick="closeModal()">
+                <div class="modal-content" onclick="event.stopPropagation()">
+                    <h3 class="modal-title" id="modalTitle"></h3>
+                    <div class="modal-body" id="modalBody"></div>
+                    <button class="modal-close" onclick="closeModal()">×</button>
+                </div>
+            </div>
+        </div>
+    </div><!--创新应用版块-->
+    <div class="shenghuo">
+        <!-- 生活场景区 -->
+        <div class="life-section">
+            <h2 class="section-title">生活场景</h2>
+            <p class="section-description">从传统艺术品走进现代生活，成为人们日常生活中的文化点缀，为现代生活增添了独特的艺术气息和文化底蕴。</p>
+            <!-- PC端不规则图片拼接 -->
+            <div class="irregular-gallery">
+                <div class="gallery-item">
+                    <img src="img/IMG-xiuxin-shenghuo-1.png" alt="家居装饰">
+                    <div class="gallery-caption">
+                        <h3>家居装饰</h3>
+                        <p>将赣发绣作品作为家居装饰，为现代家居增添文化底蕴和艺术气息。</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/IMG-xiuxin-shenghuo-2.png" alt="文创产品">
+                    <div class="gallery-caption">
+                        <h3>文创产品</h3>
+                        <p>开发赣发绣文创产品，让传统工艺走进日常生活，焕发新的生命力。</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/IMG-xiuixn-shenghuo-3.png" alt="旅游纪念品">
+                    <div class="gallery-caption">
+                        <h3>旅游纪念品</h3>
+                        <p>将赣发绣作为江西特色旅游纪念品，推广地方文化，促进文旅融合。</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/IMG-xinxingongyi-1.png" alt="个性化定制">
+                    <div class="gallery-caption">
+                        <h3>个性化定制</h3>
+                        <p>提供个性化赣发绣定制服务，满足现代人们对独特艺术品的需求。</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/IMG-his-jr-1-3.png" alt="传统工艺">
+                    <div class="gallery-caption">
+                        <h3>传统工艺</h3>
+                        <p>传承赣发绣传统工艺，保持其独特的艺术价值和文化内涵。</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/img-xiuxin-shenghuo-4-xiandaihua.png" alt="现代设计">
+                    <div class="gallery-caption">
+                        <h3>现代设计</h3>
+                        <p>融合现代设计理念，为赣发绣注入新的创意和时尚元素。</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/img-chuangxinyingyong-5.png" alt="创新应用">
+                    <div class="gallery-caption">
+                        <h3>创新应用</h3>
+                        <p>探索赣发绣在现代社会的创新应用，拓展其艺术表现力和市场空间。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 移动端轮播图 -->
+            <div class="mobile-carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="img/IMG-xiuxin-shenghuo-1.png" alt="家居装饰">
+                        <div class="carousel-caption">家居装饰</div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/IMG-xiuxin-shenghuo-2.png" alt="文创产品">
+                        <div class="carousel-caption">文创产品</div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/IMG-xiuixn-shenghuo-3.png" alt="旅游纪念品">
+                        <div class="carousel-caption">旅游纪念品</div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/IMG-xinxingongyi-1.png" alt="个性化定制">
+                        <div class="carousel-caption">个性化定制</div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/IMG-his-jr-1-3.png" alt="传统工艺">
+                        <div class="carousel-caption">传统工艺</div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/img-xiuxin-shenghuo-4-xiandaihua.png" alt="现代设计">
+                        <div class="carousel-caption">现代设计</div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/img-chuangxinyingyong-5.png" alt="创新应用">
+                        <div class="carousel-caption">创新应用</div>
+                    </div>
+                </div>
+                <div class="carousel-indicators">
+                    <span class="indicator active"></span>
+                    <span class="indicator"></span>
+                    <span class="indicator"></span>
+                    <span class="indicator"></span>
+                    <span class="indicator"></span>
+                    <span class="indicator"></span>
+                    <span class="indicator"></span>
+                </div>
+            </div>
+        </div>
+    </div><!--生活应用版块-->
+    <!-- 应用创新总结视频版块 -->
+    <div class="innovation-summary">
+        <div class="summary-container">
+            <div class="summary-header">
+                <h2 class="section-title">应用创新总结</h2>
+                <div class="decorative-line"></div>
+            </div>
+            <p class="section-description">赣发绣在现代社会的创新应用，融合传统工艺与现代技术，为这一古老非遗注入新的生命力。</p>
+
+            <div class="summary-content-wrapper">
+                <div class="summary-content">
+                    <p>通过数字化设计、现代艺术融合和新型发线工艺的创新应用，赣发绣正以全新的面貌走进现代生活。从家居装饰到文创产品，从旅游纪念品到个性化定制，赣发绣的应用领域不断拓展，展现出强大的生命力和艺术价值。</p>
+                    <p>我们相信，在传承中创新，在创新中传承，赣发绣这一非物质文化遗产必将在现代社会中绽放出更加绚丽的光彩，成为江西文化的重要名片。</p>
+                </div>
+                <div class="summary-video">
+                    <div class="video-wrapper">
+                        <video loop playsinline id="innovationVideo">
+                            <source src="video/BS_FX-chuanxin.mp4" type="video/mp4">
+                            您的浏览器不支持视频播放
+                        </video>
+                        <div class="video-overlay"></div>
+                        <div class="video-controls">
+                            <button class="play-pause-btn" id="innovationPlayPauseBtn">
+                                <span class="play-icon">▶</span>
+                                <span class="pause-icon">❚❚</span>
+                            </button>
+                        </div>
+                </div>
+            </div>
+
+        </div>
+    </div><!--应用创新总结版块-->
+    <!--<div class="linian">
+        <!-- 传承理念区域 --><!---
+     <div class="page-container">
+        <!-- 传承理念区域 --><!--
+        <div class="inheritance-section">
+            <div class="section-header">
+                <h2 class="section-title">传承理念</h2>
+                <div class="decorative-line"></div>
+            </div>
+            <p class="section-description">赣发绣作为江西非物质文化遗产，承载着深厚的历史文化底蕴和独特的艺术价值，我们致力于传承和弘扬这一古老工艺。</p>
+            
+            <div class="inheritance-content">
+                <!-- 视频部分 --><!--
+                <div class="inheritance-video">
+                    <div class="video-wrapper">
+                        <video  loop playsinline id="inheritanceVideo">
+                            <source src="video/BS_FX_chuancheng.mp4" type="video/mp4">
+                            您的浏览器不支持视频播放
+                        </video>
+                        <div class="video-overlay"></div>
+                        <div class="video-controls">
+                            <button class="play-pause-btn" id="playPauseBtn">
+                                <span class="play-icon">▶</span>
+                                <span class="pause-icon">❚❚</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 文案部分 --><!--
+                <div class="inheritance-text">
+                    <div class="text-container">
+                        <p>赣发绣，作为江西独有的传统工艺，有着悠久的历史和深厚的文化底蕴。它起源于唐代，兴盛于明清，是我国刺绣艺术中的瑰宝。</p>
+                        <p>赣发绣以人的头发为材料，通过特殊的工艺处理，制作出精美的刺绣作品。这种工艺不仅需要精湛的技艺，更需要耐心和毅力。每一件赣发绣作品都凝聚着绣工的心血和智慧，是对传统文化的传承和创新。</p>
+                        <p>在现代社会，我们面临着传统工艺传承的挑战。为了让赣发绣这一古老工艺焕发出新的生命力，我们积极探索创新之路，将传统工艺与现代设计相结合，创作具有时代特色的新作品。</p>
+                        <p>我们相信，只有在传承中创新，在创新中传承，才能让赣发绣这一非物质文化遗产得以延续和发展。我们致力于培养新一代的赣发绣传承人，让这一古老工艺在现代社会中绽放出更加绚丽的光彩。</p>
+                        <p>同时，我们也希望通过各种渠道，向更多的人介绍赣发绣的历史和文化，让更多的人了解和喜爱这一传统工艺。我们相信，只有让更多的人参与到赣发绣的传承和保护中来，才能让这一古老工艺真正融入现代生活，成为我们文化自信的重要组成部分。</p>
+                    </div>
+                    <button class="expand-btn" onclick="toggleExpand(this)">展开</button>
+                </div>
+            </div>
+        </div>
+    </div>-->
+    </div><!--传承理念版块-->
+    <footer>
+        <div class="footer-content">
+            <!-- 品牌信息 -->
+            <div class="footer-section brand">
+                <h3>赣发绣</h3>
+                <p>青丝载忆，数字传情</p>
+                <p class="heritage-tag">江西非物质文化遗产保护项目</p>
+                <!-- 社交媒体链接 -->
+                <div class="social-links">
+                    <a href="#" title="微信公众号"><i class="social-icon">📱</i></a>
+                    <a href="#" title="微博"><i class="social-icon">🐦</i></a>
+                    <a href="#" title="抖音"><i class="social-icon">🎵</i></a>
+                    <a href="#" title="小红书"><i class="social-icon">📕</i></a>
+                </div>
+            </div>
+            <!-- 联系方式 -->
+            <div class="footer-section contact">
+                <h4>联系我们</h4>
+                <ul class="contact-info">
+                    <li><i class="contact-icon">📍</i> 江西省南昌市文化艺术中心</li>
+                    <li><i class="contact-icon">📞</i> 0791-12345678</li>
+                    <li><i class="contact-icon">📧</i> info@ganfaxiu.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p>&copy; 2026 赣发绣文化传承中心. 保留所有权利.</p>
+                <div class="legal-links">
+                    <a href="#">隐私政策</a>
+                    <span>|</span>
+                    <a href="#">服务条款</a>
+                </div>
+            </div>
+        </div>
+        <!-- 返回顶部按钮 -->
+        <button id="backToTop" class="back-to-top" title="返回顶部">↑</button>
+    </footer><!--网页页面页脚-->
+</body>
+
+</html>
